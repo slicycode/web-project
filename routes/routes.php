@@ -44,7 +44,7 @@ Flight::route('POST /register', function(){
 
     //On vérifie si le mot de passe entré est suffisament long
     if (strlen($password) < 8) {
-        $messages['password']="Mot de passe de 8 caractères minimum requis";
+        $messages['password']="Mot de passe de 8 caractères minimum";
     }
     
     //On vérifie si une adresse e-mail est entrée

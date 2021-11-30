@@ -1,8 +1,8 @@
 {extends file='layout.tpl'}
-{block name=title}Login{/block}
+{block name=title}Connexion{/block}
 {block name=body}
-<div id='main'>
-<h1>Login</h1>
+<div class="app">
+<h1>Connexion</h1>
 <p>
 Contenu du template login.tpl
 </p>

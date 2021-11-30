@@ -1,8 +1,8 @@
 {extends file='layout.tpl'}
-{block name=title}Page d'accueil{/block}
+{block name=title}Accueil{/block}
 {block name=body}
-<div id='main'>
-<h1>Home</h1>
-test
+<div class='app'>
+    <h1>Accueil</h1>
+    <p>Voici l'accueil</p>
 </div>
 {/block}

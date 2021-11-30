@@ -1,7 +1,97 @@
-h1 {
-    color: coral;
+* {
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", sans-serif;
 }
 
+/* style sur la navbar */
+
 .nav {
-    margin-left: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.nav > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav > a::after {
+    display: block;
+    content: '';
+    border-bottom: 1px solid black;
+    transform: scaleX(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.nav > a:hover::after {
+    transform: scaleX(1);
+}
+
+/* style sur le body de toutes les pages appelé : app */ 
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* style sur le formulaire d'inscription */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.form__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input > label, input {
+    margin-top: 10px;
+    width: 100%;
+    padding-bottom: 6px;
+}
+
+.form__input > label {
+    padding-top: 10px;
+}
+
+.form__input > input {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.form__input > input:focus {
+    outline: none;
+}
+
+.form__input > span {
+    margin-top: 5px;
+    color: rgba(235, 47, 47, 0.767);
+}
+
+.pure-controls {
+    width: 40%;
+    margin: 10px auto;
+}
+
+.pure-controls > button {
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    background-color: teal;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.pure-controls > button:hover {
+    transform: scale(1.05);    
 }
