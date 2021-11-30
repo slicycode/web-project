@@ -3,8 +3,6 @@
 {block name=body}
 <div class="app">
 <h1>Inscrivez-vous</h1>
-<body>
-
 <form class="form" action="register" method="post">
     <div class="form__input">
         <label for="stacked-name">Nom d'utilisateur</label>

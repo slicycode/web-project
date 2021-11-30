@@ -2,7 +2,7 @@
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", sans-serif;
 }
 
-/* style sur la navbar */
+/* STYLE DE LA NAVBAR SUR TOUTES LES PAGES */
 
 .nav {
     display: flex;
@@ -28,15 +28,47 @@
     transform: scaleX(1);
 }
 
-/* style sur le body de toutes les pages appelé : app */ 
+@media screen and (max-width: 600px) {
+    .nav {
+        width: 100%;
+    }
+}
+
+/* STYLE SUR LE BODY (APP) DE TOUTES LES PAGES */ 
 
 .app {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
-/* style sur le formulaire d'inscription */
+/* STYLE DE LA PAGE D'ACCUEIL */
+
+.accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.accueil > h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.accueil > span {
+    font-style: italic;
+}
+
+.accueil > p {
+    margin-top: 3em;
+    max-width: 80ch;
+    text-align: center;
+}
+
+/* STYLE DU FORMULAIRE D'INSCRIPTION ET DE CONNEXION */
 
 .form {
     display: flex;
@@ -94,4 +126,49 @@
 
 .pure-controls > button:hover {
     transform: scale(1.05);    
+}   
+
+.app > .member > #formButton__open {
+    border: none;
+    margin-top: 20px;
+    background-color: rgb(185, 105, 105);
+    color: #fff;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.app > .member > button:hover {
+    transform: scale(1.05);    
+}   
+
+#form__member {
+    display: none;
+    width: 300px;
+    margin-top: 1em;
+}
+
+#form__member > h1 {
+    text-align: center;
+}
+
+#form__member > button {
+    border: none;
+    background-color: rgb(185, 105, 105);
+    color: #fff;
+    padding: 12px 8px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#form__member > button:hover {
+    transform: scale(1.05); 
 }

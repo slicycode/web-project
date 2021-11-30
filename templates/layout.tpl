@@ -11,7 +11,7 @@
     <a href='./'>Accueil</a>
     <a href='register'>S'inscrire</a> 
     <a href='login'>Se connecter</a> 
-    <a href='profil'>Son profil</a> 
+    <a href='candidature'>Ma candidature</a> 
 </div>
 {/block}
 {block name=body}Accueil{/block}
