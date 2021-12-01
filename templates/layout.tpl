@@ -6,6 +6,7 @@
     {/block}
 </head>
 <body>
+
 {block name=nav}
 <div class="nav">
     <a href='./'>Accueil</a>
