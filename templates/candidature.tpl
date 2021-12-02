@@ -1,8 +1,18 @@
 {extends file='layout.tpl'}
-{block name=title}Profil{/block}
+{block name=title}Candidature{/block}
 {block name=body}
 <div class="app">
-<h1>Ma candidature</h1>
-<p>Contenu de la candidature</p>
+    <h1>Ma candidature</h1>
+    <div class="candidature">
+        <div class="candidature__img">
+            <img src="https://images.unsplash.com/photo-1638309024787-1bd16766f123?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+        </div>
+
+        <div class="candidature__desc">
+            <h2>TITRE</h2>
+            <p>audio</p>
+            <p>DESCRIPTION</p>
+        </div>
+    </div>
 </div>
 {/block}
