@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-04 16:08:36
+/* Smarty version 3.1.34-dev-7, created on 2021-12-04 17:22:04
   from 'C:\laragon\www\ProjetWeb\web-project\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61ab92846d8609_00315937',
+  'unifunc' => 'content_61aba3bce61159_79794043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df02435c1e0011b749bc4ee0dea104120bffff24' => 
     array (
       0 => 'C:\\laragon\\www\\ProjetWeb\\web-project\\templates\\login.tpl',
-      1 => 1638627281,
+      1 => 1638638519,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61ab92846d8609_00315937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61aba3bce61159_79794043 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_141778990361ab9284454180_16444099', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197456260361aba3bce4b3d3_20753041', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179381734261ab9284454e36_39259414', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44177970761aba3bce4c0c5_60811356', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_141778990361ab9284454180_16444099 extends Smarty_Internal_Block
+class Block_197456260361aba3bce4b3d3_20753041 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_141778990361ab9284454180_16444099',
+    0 => 'Block_197456260361aba3bce4b3d3_20753041',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Connexion<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_179381734261ab9284454e36_39259414 extends Smarty_Internal_Block
+class Block_44177970761aba3bce4c0c5_60811356 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_179381734261ab9284454e36_39259414',
+    0 => 'Block_44177970761aba3bce4c0c5_60811356',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <h1>Connectez-vous</h1>
 
-    <form class="form" action="register" method="post">
+    <form class="form" action="login" method="post">
         <div class="form__input">
             <label for="stacked-email">Adresse mail</label>
             <input autofocus="autofocus" name="email" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['email'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
