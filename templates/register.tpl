@@ -24,7 +24,7 @@
     </div>
      <div class="form__input">
         <label for="stacked-foo">Code postal</label>
-        <input name="code postal" value="{$valeurs.codepostal|escape|default:''}"  type="text" id="stacked-foo" placeholder="Code postal" />
+        <input name="codepostal" value="{$valeurs.codepostal|escape|default:''}"  type="text" id="stacked-foo" placeholder="Code postal" />
         <span class="erreur"> {$messages.codepostal|escape|default:''}</span>
 
     </div>

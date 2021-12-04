@@ -1,7 +1,7 @@
 <?php
 require '../../includes/flight/Flight.php';
 require '../../includes/smarty/libs/Smarty.class.php';
-require('./includes/pdo.php');  
+require('pdo.php');  
 
 Flight::register('view', 'Smarty', array(), function($smarty){
     $smarty->template_dir = './templates/';
@@ -14,6 +14,8 @@ Flight::map('render', function($template, $data){
     Flight::view()->assign($data);
     Flight::view()->display($template);
 });
+
+Flight::set('db', $db);
 
 require "routes/routes.php";
 Flight::start();

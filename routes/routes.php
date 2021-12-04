@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 Flight::route('/', function(){
     Flight::render("index.tpl",array());
@@ -25,9 +25,16 @@ Flight::route('GET /success', function(){
 });
 
 Flight::route('POST /register', function(){
-    $db = Flight::get('$db');
+
+    $db = Flight::get('db');
     $data = Flight::request()->data;
     $messages=array();
+
+    $stmt = $db->prepare("select * from utilisateur");
+    # prepare() pour éviter les injections SQL
+    $stmt->execute();
+    # Si aucun résultat, alors l'email n'existe pas dans la BDD
+    $id = $stmt->rowCount();
 
     $nom = $data->nom;
     $prenom = $data->prenom;
@@ -101,16 +108,18 @@ Flight::route('POST /register', function(){
     //Si on a pas d'erreurs, on affiche la page de succès et on insère les informations du register dans la BD
     } else {
         $st=Flight::get('db')->prepare(
-            "insert into representant values (:nom,:prenom,:email,:password,:adresse,:codepostal,:telephone)"
+            "insert into utilisateur values(:id, :nom,:prenom,:email,:password,:adresse,:codepostal,:telephone,:admin)"
         );
         $st->execute(array(
+            ':id' => $id,
             ':nom' => $nom,
             ':prenom' => $prenom,
             ':email' => $email,
             ':password' => $hashed_pwd,
             ':adresse' => $adresse,
-            ':codepostal,' => $codepostal, 
-            ':telephone,' => $telephone, 
+            ':codepostal' => $codepostal, 
+            ':telephone' => $telephone,
+            ':admin' => 0
         ));
         Flight::redirect('/success');
     }
