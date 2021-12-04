@@ -5,7 +5,7 @@
 
     <h1>Connectez-vous</h1>
 
-    <form class="form" action="register" method="post">
+    <form class="form" action="login" method="post">
         <div class="form__input">
             <label for="stacked-email">Adresse mail</label>
             <input autofocus="autofocus" name="email" value="{$valeurs.email|escape|default:''}" type="email" id="stacked-email" placeholder="Email" />

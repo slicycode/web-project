@@ -1,5 +1,18 @@
     <?php
 
+# Permet de savoir si le login est correcte ou non
+function check_connexion($database, $username, $mdp){
+    $stmt = $database->query("select * from utilisateur");
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        # Si le nom d'utilisateur et le mdp sont corrects
+        if($username == $ligne[3] && password_verify($mdp, $ligne[4]))
+            # Retourne les infos de l'utilisateur
+            return $ligne;
+    }
+    # Si on ne trouve rien on retourne un "utilisateur vide"
+    return array();
+}
+
 Flight::route('/', function(){
     Flight::render("index.tpl",array());
 });
@@ -126,48 +139,33 @@ Flight::route('POST /register', function(){
 });
 
 Flight::route('POST /login', function(){
-    $data = Flight::request()->data;
-    $db = Flight::get('$db');
-    $password=$data->password;
-    $email= $data->email;
-
-    $messages=array();
-
-    if (empty(trim($password)))
-        $message['password'] = "Mot de passe obligatoire";
-
-    if (empty(trim($email))) {
-        $messages['email'] = "Adresse email obligatoire";
-
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $messages['email'] = "Adresse email non valide";
-
-    } else {
-        $testDupli=Flight::get('db')->prepare(
-            "select utilisateur.email from utilisateur where utilisateur.email like :recherche"); //On prépare la requête SQL
-        $testDupli->execute(array(':recherche' => "%$email%")); //On exécute la requête SQL
-        if ($testDupli->fetch(PDO::FETCH_NUM) != 0) { //On vérifie le résultat de la requête  
-            $messages['email']="Adresse email déjà existante";
-        }
+    # On récupère la BDD
+    $db = Flight::get('db');
+    # On récupère les informations que l'utilisateur a saisi
+    $username = $_POST["email"];
+    $mdp = $_POST["password"];
+    # On fait appel à notre méthode pour vérifier si l'utilisateur
+    # existe
+    $conn = check_connexion($db, $username, $mdp);
+    # Si l'utilisateur n'est pas vide (existe)
+    if(!empty($conn)){
+        # On stocke dans le tableau $_SESSION les informations en
+        # rapport avec la session de l'utilisateur
+        $_SESSION["session_on"] = TRUE;
+        $_SESSION["informations"] = $conn;
+        # On redirige vers la page d'accueil
+        Flight::redirect("/");
     }
-
-    if ($db->rowCount() == 0)
-        $messages['email'] = "Email invalide";
     else{
-        $nom = $db->fetch();
-        if (password_verify($password, $nom['password'])){
-            Flight::redirect("/success");
-        }
-        else{
-            Flight::redirect("/login");
-            $messages['password'] = "Mot de passe incorrect";
-        }
+        # Si l'utilisateur se trompe, alors on redirige l'utilisateur
+        # vers la page de login avec les informations qu'il a saisi
+        # précédemment
+        $messages['password'] = "Mot de passe ou email incorrect";
+        Flight::render("login.tpl", array(
+            'messages' => $messages,   
+            'valeurs' => $_POST
+        ));
+
     }
-    print_r($messages);
-}); 
-
-Flight::route('POST /admin', function(){
-    
-
 });
 ?>
