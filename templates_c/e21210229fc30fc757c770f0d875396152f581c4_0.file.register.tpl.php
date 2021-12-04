@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-04 15:35:25
+/* Smarty version 3.1.34-dev-7, created on 2021-12-04 17:13:04
   from 'C:\laragon\www\tps\projet\templates\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61ab8abd59cc32_97476945',
+  'unifunc' => 'content_61aba1a0876273_08900615',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e21210229fc30fc757c770f0d875396152f581c4' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\register.tpl',
-      1 => 1638632124,
+      1 => 1638637869,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61ab8abd59cc32_97476945 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61aba1a0876273_08900615 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_193684515061ab8abd5734f2_00374841', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_166100062961aba1a0851883_95892777', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15239514761ab8abd574ad6_67929887', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29236341461aba1a0852f89_20238754', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_193684515061ab8abd5734f2_00374841 extends Smarty_Internal_Block
+class Block_166100062961aba1a0851883_95892777 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_193684515061ab8abd5734f2_00374841',
+    0 => 'Block_166100062961aba1a0851883_95892777',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Inscription<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_15239514761ab8abd574ad6_67929887 extends Smarty_Internal_Block
+class Block_29236341461aba1a0852f89_20238754 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_15239514761ab8abd574ad6_67929887',
+    0 => 'Block_29236341461aba1a0852f89_20238754',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -89,7 +89,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     </div>
      <div class="form__input">
         <label for="stacked-foo">Code postal</label>
-        <input name="code postal" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['codepostal'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+        <input name="codepostal" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['codepostal'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 "  type="text" id="stacked-foo" placeholder="Code postal" />
         <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['codepostal'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
