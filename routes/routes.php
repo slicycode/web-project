@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 # Permet de savoir si le login est correcte ou non
 function check_connexion($database, $username, $mdp){
@@ -12,6 +12,20 @@ function check_connexion($database, $username, $mdp){
     # Si on ne trouve rien on retourne un "utilisateur vide"
     return array();
 }
+
+# Permet de savoir si le login de l'admin est correcte ou non
+function check_connexionAdmin($database, $mdp){
+    $stmt = $database->query("select * from utilisateur");
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        # Si le nom d'utilisateur et le mdp sont corrects
+        if(password_verify($mdp, $ligne[4]))
+            # Retourne les infos de l'utilisateur
+            return $ligne;
+    }
+    # Si on ne trouve rien on retourne un "utilisateur vide"
+    return array();
+}
+
 
 Flight::route('/', function(){
     Flight::render("index.tpl",array());
@@ -165,7 +179,35 @@ Flight::route('POST /login', function(){
             'messages' => $messages,   
             'valeurs' => $_POST
         ));
+    }
+});
 
+Flight::route('POST /admin', function(){
+    # On récupère la BDD
+    $db = Flight::get('db');
+    # On récupère les informations que l'utilisateur a saisi
+    $mdp = $_POST["password"];
+    # On fait appel à notre méthode pour vérifier si l'utilisateur
+    # existe
+    $conn = check_connexionAdmin($db, $mdp);
+    # Si l'utilisateur n'est pas vide (existe)
+    if(!empty($conn)){
+        # On stocke dans le tableau $_SESSION les informations en
+        # rapport avec la session de l'utilisateur
+        $_SESSION["session_on"] = TRUE;
+        $_SESSION["informations"] = $conn;
+        # On redirige vers la page d'accueil
+        Flight::redirect("/");
+    }
+    else{
+        # Si l'utilisateur se trompe, alors on redirige l'utilisateur
+        # vers la page de login avec les informations qu'il a saisi
+        # précédemment
+        $messages['password'] = "Mot de passe incorrect";
+        Flight::render("admin.tpl", array(
+            'messages' => $messages,   
+            'valeurs' => $_POST
+        ));
     }
 });
 ?>
