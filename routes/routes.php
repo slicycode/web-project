@@ -16,25 +16,36 @@ Flight::route('GET /candidature', function(){
     Flight::render("candidature.tpl",array());
 });
 
+Flight::route('GET /admin', function(){
+    Flight::render("admin.tpl",array());
+});
+
 Flight::route('GET /success', function(){
     Flight::render("success.tpl",array("value" => $_POST));
 });
 
 Flight::route('POST /register', function(){
-    $db = Flight::get('db');
+    $db = Flight::get('$db');
     $data = Flight::request()->data;
     $messages=array();
 
-    $user = $data->user;
+    $nom = $data->nom;
+    $prenom = $data->prenom;
     $password = $data->password;
     $hashed_pwd = password_hash($password, PASSWORD_DEFAULT);
     $email = $data->email;
-    $city = $data->city;
-    $country = $data->country;
+    $adresse = $data->adresse;
+    $codepostal = $data->codepostal;
+    $telephone = $data->telephone;
 
-    //On vérifie si un nom d'utilisateur est entré
-    if (empty(trim($user))) {
-        $messages['user'] = "Nom d'utilisateur obligatoire";
+    //On vérifie si un nom est entré
+    if (empty(trim($nom))) {
+        $messages['nom'] = "Nom obligatoire";
+    }
+
+    //On vérifie si un prenom est entré
+    if (empty(trim($prenom))) {
+        $messages['prenom'] = "Prénom obligatoire";
     }
 
     //On vérifie si un mot de passe est entré
@@ -58,20 +69,26 @@ Flight::route('POST /register', function(){
     //Si valide et non vide, on vérifie si elle existe déjà dans la BD
     } else {
         $testDupli = Flight::get('db')->prepare(
-            "select utilisateur.email from utilisateur where utilisateur.email like :recherche"); //On prépare la requête SQL
+            "select representant.email from representant where representant.email like :recherche"); //On prépare la requête SQL
         $testDupli->execute(array(':recherche' => "%$email%")); //On exécute la requête SQL
         if ($testDupli->fetch(PDO::FETCH_NUM) != 0) { //On vérifie le résultat de la requête  
             $messages['email']="Adresse email déjà existante";
         }
     }
 
-    //On vérifie si une ville est entrée
-    if (empty(trim($city))) {
-        $messages['city']="Ville obligatoire";
+    //On vérifie si une adresse est entrée
+    if (empty(trim($adresse))) {
+        $messages['adresse']="Adresse obligatoire";
     }
-    //On vérifie si un pays est entré
-    if (empty(trim($country))) {
-        $messages['country']="Pays obligatoire";
+
+    //On vérifie si un code postal est entré
+    if (empty(trim($codepostal))) {
+        $messages['codepostal']="Code postal obligatoire";
+    }
+
+    //On vérifie si un numéro de téléphone est entré
+    if (empty(trim($telephone))) {
+        $messages['telephone']="Numéro de téléphone obligatoire";
     }
 
     //Si on a des erreurs, on affiche les messages ($messages) et les valeurs post ($_post)
@@ -80,17 +97,20 @@ Flight::route('POST /register', function(){
             'messages' => $messages,   
             'valeurs' => $_POST
         ));
+
     //Si on a pas d'erreurs, on affiche la page de succès et on insère les informations du register dans la BD
     } else {
         $st=Flight::get('db')->prepare(
-            "insert into utilisateur values (:user,:email,:password,:city,:country)" //a changer
+            "insert into representant values (:nom,:prenom,:email,:password,:adresse,:codepostal,:telephone)"
         );
         $st->execute(array(
-            ':user' => $user,
+            ':nom' => $nom,
+            ':prenom' => $prenom,
             ':email' => $email,
             ':password' => $hashed_pwd,
-            ':city' => $city,
-            ':country' => $country 
+            ':adresse' => $adresse,
+            ':codepostal,' => $codepostal, 
+            ':telephone,' => $telephone, 
         ));
         Flight::redirect('/success');
     }
@@ -98,7 +118,7 @@ Flight::route('POST /register', function(){
 
 Flight::route('POST /login', function(){
     $data = Flight::request()->data;
-
+    $db = Flight::get('$db');
     $password=$data->password;
     $email= $data->email;
 
@@ -122,11 +142,11 @@ Flight::route('POST /login', function(){
         }
     }
 
-    if ($bd->rowCount() == 0)
+    if ($db->rowCount() == 0)
         $messages['email'] = "Email invalide";
     else{
-        $user = $bd->fetch();
-        if (password_verify($password, $user['password'])){
+        $nom = $db->fetch();
+        if (password_verify($password, $nom['password'])){
             Flight::redirect("/success");
         }
         else{
@@ -136,4 +156,9 @@ Flight::route('POST /login', function(){
     }
     print_r($messages);
 }); 
+
+Flight::route('POST /admin', function(){
+    
+
+});
 ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-11-30 16:13:00
+/* Smarty version 3.1.34-dev-7, created on 2021-12-04 15:35:25
   from 'C:\laragon\www\tps\projet\templates\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61a64d8c94e115_92636704',
+  'unifunc' => 'content_61ab8abd59cc32_97476945',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e21210229fc30fc757c770f0d875396152f581c4' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\register.tpl',
-      1 => 1638288244,
+      1 => 1638632124,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61a64d8c94e115_92636704 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61ab8abd59cc32_97476945 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_119299797461a64d8c93c704_30817820', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_193684515061ab8abd5734f2_00374841', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_38658184861a64d8c93d177_00202765', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15239514761ab8abd574ad6_67929887', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_119299797461a64d8c93c704_30817820 extends Smarty_Internal_Block
+class Block_193684515061ab8abd5734f2_00374841 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_119299797461a64d8c93c704_30817820',
+    0 => 'Block_193684515061ab8abd5734f2_00374841',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Inscription<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_38658184861a64d8c93d177_00202765 extends Smarty_Internal_Block
+class Block_15239514761ab8abd574ad6_67929887 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_38658184861a64d8c93d177_00202765',
+    0 => 'Block_15239514761ab8abd574ad6_67929887',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,13 +64,38 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <h1>Inscrivez-vous</h1>
 <form class="form" action="register" method="post">
     <div class="form__input">
-        <label for="stacked-name">Nom d'utilisateur</label>
-        <input autofocus="autofocus" name="user" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['user'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+        <label for="stacked-name">Nom</label>
+        <input autofocus="autofocus" name="nom" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['nom'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 " type="text" id="stacked-name" placeholder="Nom" />
-        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['user'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['nom'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
 
     </div>
+    <div class="form__input">
+        <label for="stacked-name">Prénom</label>
+        <input autofocus="autofocus" name="prenom" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['prenom'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="text" id="stacked-name" placeholder="Prénom" />
+        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['prenom'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+
+    </div>
+    <div class="form__input">
+        <label for="stacked-name">Adresse</label>
+        <input name="adresse" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['adresse'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+"  type="text" id="stacked-name" placeholder="Adresse" />
+        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['adresse'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+
+    </div>
+     <div class="form__input">
+        <label for="stacked-foo">Code postal</label>
+        <input name="code postal" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['codepostal'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+"  type="text" id="stacked-foo" placeholder="Code postal" />
+        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['codepostal'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+
+    </div>
+
     <div class="form__input">
         <label for="stacked-password">Mot de passe</label>
         <input name="password" type="password" id="stacked-password" placeholder="Mot de passe" />
@@ -79,25 +104,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     </div>
     <div class="form__input">
-        <label for="stacked-email">Adresse mail</label>
+        <label for="stacked-email">Email</label>
         <input name="email" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['email'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 " type="email" id="stacked-email" placeholder="Email" />
         <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['email'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
     </div>
+    
     <div class="form__input">
-        <label for="stacked-foo">Ville</label>
-        <input name="city" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['city'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-"  type="text" id="stacked-foo" placeholder="Ville" />
-        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['city'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-</span>
-
-    </div>
-    <div class="form__input">
-        <label for="stacked-foo">Pays</label>
-        <input name="country" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['country'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Pays" />
-        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['country'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+        <label for="stacked-phone">Téléphone</label>
+        <input name="telephone" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['telephone'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="telephone" id="stacked-phone" placeholder="Téléphone" />
+        <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['telephone'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
     </div>
 
