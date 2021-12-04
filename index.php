@@ -1,5 +1,5 @@
 <?php
-require '../../includes/flight/flight/Flight.php';
+require '../../includes/flight/Flight.php';
 require '../../includes/smarty/libs/Smarty.class.php';
 
 Flight::register('view', 'Smarty', array(), function($smarty){
