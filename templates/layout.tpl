@@ -13,6 +13,7 @@
     <a href='register'>S'inscrire</a> 
     <a href='login'>Se connecter</a> 
     <a href='candidature'>Ma candidature</a> 
+    <a href='admin'>Administrateur</a> 
 </div>
 {/block}
 {block name=body}Accueil{/block}

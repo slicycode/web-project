@@ -5,11 +5,30 @@
 <h1>Inscrivez-vous</h1>
 <form class="form" action="register" method="post">
     <div class="form__input">
-        <label for="stacked-name">Nom d'utilisateur</label>
-        <input autofocus="autofocus" name="user" value="{$valeurs.user|escape|default:''}" type="text" id="stacked-name" placeholder="Nom" />
-        <span class="erreur"> {$messages.user|escape|default:''}</span>
+        <label for="stacked-name">Nom</label>
+        <input autofocus="autofocus" name="nom" value="{$valeurs.nom|escape|default:''}" type="text" id="stacked-name" placeholder="Nom" />
+        <span class="erreur"> {$messages.nom|escape|default:''}</span>
 
     </div>
+    <div class="form__input">
+        <label for="stacked-name">Prénom</label>
+        <input autofocus="autofocus" name="prenom" value="{$valeurs.prenom|escape|default:''}" type="text" id="stacked-name" placeholder="Prénom" />
+        <span class="erreur"> {$messages.prenom|escape|default:''}</span>
+
+    </div>
+    <div class="form__input">
+        <label for="stacked-name">Adresse</label>
+        <input name="adresse" value="{$valeurs.adresse|escape|default:''}"  type="text" id="stacked-name" placeholder="Adresse" />
+        <span class="erreur"> {$messages.adresse|escape|default:''}</span>
+
+    </div>
+     <div class="form__input">
+        <label for="stacked-foo">Code postal</label>
+        <input name="code postal" value="{$valeurs.codepostal|escape|default:''}"  type="text" id="stacked-foo" placeholder="Code postal" />
+        <span class="erreur"> {$messages.codepostal|escape|default:''}</span>
+
+    </div>
+
     <div class="form__input">
         <label for="stacked-password">Mot de passe</label>
         <input name="password" type="password" id="stacked-password" placeholder="Mot de passe" />
@@ -17,20 +36,15 @@
 
     </div>
     <div class="form__input">
-        <label for="stacked-email">Adresse mail</label>
+        <label for="stacked-email">Email</label>
         <input name="email" value="{$valeurs.email|escape|default:''}" type="email" id="stacked-email" placeholder="Email" />
         <span class="erreur"> {$messages.email|escape|default:''}</span>
     </div>
+    
     <div class="form__input">
-        <label for="stacked-foo">Ville</label>
-        <input name="city" value="{$valeurs.city|escape|default:''}"  type="text" id="stacked-foo" placeholder="Ville" />
-        <span class="erreur"> {$messages.city|escape|default:''}</span>
-
-    </div>
-    <div class="form__input">
-        <label for="stacked-foo">Pays</label>
-        <input name="country" value="{$valeurs.country|escape|default:''}" type="text" id="stacked-foo" placeholder="Pays" />
-        <span class="erreur"> {$messages.country|escape|default:''}</span>
+        <label for="stacked-phone">Téléphone</label>
+        <input name="telephone" value="{$valeurs.telephone|escape|default:''}" type="telephone" id="stacked-phone" placeholder="Téléphone" />
+        <span class="erreur"> {$messages.telephone|escape|default:''}</span>
     </div>
 
     <div class="pure-controls">
