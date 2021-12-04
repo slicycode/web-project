@@ -1,6 +1,10 @@
 <?php
+<<<<<<< HEAD
 session_start();
 require '../../includes/flight/Flight.php';
+=======
+require '../../includes/flight/flight/Flight.php';
+>>>>>>> 3ac9aea9a3dd7aa864a89623f251722ac5bf8a8e
 require '../../includes/smarty/libs/Smarty.class.php';
 require('pdo.php');  
 
