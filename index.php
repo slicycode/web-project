@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../../includes/flight/Flight.php';
 require '../../includes/smarty/libs/Smarty.class.php';
 require('pdo.php');  
