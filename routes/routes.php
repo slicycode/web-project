@@ -1,5 +1,9 @@
 <?php
 
+if(isset($_SESSION["session_on"])){
+    Flight::view()->assign("session", $_SESSION);
+};
+
 # Permet de savoir si le login est correcte ou non
 function check_connexion($database, $username, $mdp){
     $stmt = $database->query("select * from utilisateur");
@@ -28,7 +32,7 @@ function check_connexionAdmin($database, $mdp){
 
 
 Flight::route('/', function(){
-    Flight::render("index.tpl",array());
+    Flight::render("index.tpl", array());
 });
 
 Flight::route('GET /register', function(){
@@ -168,7 +172,7 @@ Flight::route('POST /login', function(){
         $_SESSION["session_on"] = TRUE;
         $_SESSION["informations"] = $conn;
         # On redirige vers la page d'accueil
-        Flight::redirect("/");
+        Flight::render("index.tpl", array());
     }
     else{
         # Si l'utilisateur se trompe, alors on redirige l'utilisateur
