@@ -14,7 +14,7 @@
     <a href='register'>S'inscrire</a> 
     <a href='login'>Se connecter</a>
     {else}
-    <p>Bienvenue {$session.informations[2]} {$session.informations[1]} </p>
+    <span>Bienvenue {$session.informations[2]} {$session.informations[1]} </span>
     <a href='candidature'>Ma candidature</a>
     {/if}
     <a href='admin'>Administrateur</a> 
