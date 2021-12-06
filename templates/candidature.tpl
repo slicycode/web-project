@@ -24,7 +24,7 @@
     </div>
      <div class="form__input">
         <label for="stacked-foo">Style</label>
-        <input name="style" value="{$valeurs.style|escape|default:''}"  type="text" id="stacked-foo" placeholder="Scène" />
+        <input name="style" value="{$valeurs.style|escape|default:''}"  type="text" id="stacked-foo" placeholder="Style de musique" />
         <span class="erreur"> {$messages.style|escape|default:''}</span>
 
     </div>
@@ -67,20 +67,54 @@
 
     <div class="form__input">
         <label for="stacked-foo">Status associatif</label>
-        <input name="assos" value="{$valeurs.assos|escape|default:''}" type="text" id="stacked-foo" placeholder="Status associatif" />
+        <input name="assos" value="{$valeurs.assos|escape|default:''}" type="text" id="stacked-foo" placeholder="oui ou non" />
         <span class="erreur"> {$messages.assos|escape|default:''}</span>
     </div>
 
     <div class="form__input">
         <label for="stacked-foo">SACEM</label>
-        <input name="assos" value="{$valeurs.assos|escape|default:''}" type="text" id="stacked-foo" placeholder="Status associatif" />
+        <input name="assos" value="{$valeurs.assos|escape|default:''}" type="text" id="stacked-foo" placeholder="oui ou non" />
         <span class="erreur"> {$messages.assos|escape|default:''}</span>
     </div>
 
+    <div class="form__input">
+        <label for="stacked-foo">Producteur</label>
+        <input name="producteur" value="{$valeurs.producteur|escape|default:''}" type="text" id="stacked-foo" placeholder="oui ou non" />
+        <span class="erreur"> {$messages.producteur|escape|default:''}</span>
+    </div>
 
+    <div class="form__input">
+        <label for="stacked-foo">*premier fichier audio*</label>
+        <input name="musique1" value="{$valeurs.musique1|escape|default:''}" type="text" id="stacked-foo" placeholder="Première musique" />
+        <span class="erreur"> {$messages.musique1|escape|default:''}</span>
+    </div>
+
+    <div class="form__input">
+        <label for="stacked-foo">*second fichier audio*</label>
+        <input name="musique2" value="{$valeurs.musique2|escape|default:''}" type="text" id="stacked-foo" placeholder="Seconde musique" />
+        <span class="erreur"> {$messages.musique2|escape|default:''}</span>
+    </div>
+
+    <div class="form__input">
+        <label for="stacked-foo">*troisième fichier audio*</label>
+        <input name="musique3" value="{$valeurs.musique3|escape|default:''}" type="text" id="stacked-foo" placeholder="Troisième musique" />
+        <span class="erreur"> {$messages.musique3|escape|default:''}</span>
+    </div>
+
+    <div class="form__input">
+        <label for="stacked-foo">*Le dossier de presse ici*</label>
+        <input name="dossier" value="{$valeurs.dossier|escape|default:''}" type="text" id="stacked-foo" placeholder="Dossier de presse" />
+        <span class="erreur"> {$messages.dossier|escape|default:''}</span>
+    </div>
+
+    <div class="form__input">
+        <label for="stacked-foo">*document SACEM PDF*</label>
+        <input name="docsacem" value="{$valeurs.docsacem|escape|default:''}" type="text" id="stacked-foo" placeholder="document SACEM en PDF" />
+        <span class="erreur"> {$messages.docsacem|escape|default:''}</span>
+    </div>
 
     <div class="pure-controls">
-        <button type="submit" class="pure-button pure-button-primary">S'inscrire</button>
+        <button type="submit" class="pure-button pure-button-primary">Publier ma candidature</button>
     </div>
 </form>
 </div>
