@@ -95,14 +95,26 @@
     width: 300px;
 }
 
-.form__input {
+.form__input:not(.radio__btn) {
     display: flex;
     flex-direction: column;
 }
 
+.form__input > .radio__btn {
+    display: flex;
+    justify-content: center;
+}
+
+.form__input > .radio__btn > input {
+    margin-top: 6px;
+}
+
+.form__input > .radio__btn > label {
+    padding: 0 1em;
+}
+
 .form__input > label, input {
     margin-top: 10px;
-    width: 100%;
     padding-bottom: 6px;
 }
 
