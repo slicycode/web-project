@@ -47,6 +47,8 @@
         <span class="erreur"> {$messages.telephone|escape|default:''}</span>
     </div>
 
+    <span style="opacity: .9; font-style: italic; margin-top:10px;">*Champs obligatoires</span>
+
     <div class="pure-controls">
         <button type="submit" class="pure-button pure-button-primary">S'inscrire</button>
     </div>

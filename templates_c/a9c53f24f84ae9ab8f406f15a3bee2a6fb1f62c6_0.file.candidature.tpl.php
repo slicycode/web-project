@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-06 15:23:09
+/* Smarty version 3.1.34-dev-7, created on 2021-12-06 17:40:16
   from 'C:\laragon\www\tps\projet\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61ae2add8d5a92_05052998',
+  'unifunc' => 'content_61ae4b00526683_44185969',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9c53f24f84ae9ab8f406f15a3bee2a6fb1f62c6' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\candidature.tpl',
-      1 => 1638804187,
+      1 => 1638812413,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61ae2add8d5a92_05052998 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61ae4b00526683_44185969 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92201508261ae2add8308d9_03504833', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_207305787561ae4b004d0083_69916600', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3765216061ae2add8337d3_63075011', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55283999161ae4b004d26f5_42434990', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_92201508261ae2add8308d9_03504833 extends Smarty_Internal_Block
+class Block_207305787561ae4b004d0083_69916600 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_92201508261ae2add8308d9_03504833',
+    0 => 'Block_207305787561ae4b004d0083_69916600',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Candidature<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_3765216061ae2add8337d3_63075011 extends Smarty_Internal_Block
+class Block_55283999161ae4b004d26f5_42434990 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_3765216061ae2add8337d3_63075011',
+    0 => 'Block_55283999161ae4b004d26f5_42434990',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -117,16 +117,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         
         <div class="form__input">
             <label for="stacked-foo">Présentation</label>
-            <input name="presentation" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['presentation'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Présentation" />
+            <textarea style="resize: vertical;" name="presentation" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['presentation'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="text" id="stacked-foo" placeholder="Présentation" >
+            </textarea>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['presentation'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">Expérience</label>
-            <input name="experience" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['experience'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Expérience" />
+            <textarea style="resize: vertical;" name="experience" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['experience'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="text" id="stacked-foo" placeholder="Expérience">
+            </textarea>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['experience'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -134,7 +136,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">Site ou page Facebook</label>
             <input name="site" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['site'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Site ou page Facebook" />
+" type="text" id="stacked-foo" placeholder="URL du site ou de la page Facebook" />
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['site'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -142,7 +144,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">SoundCloud</label>
             <input name="soundcloud" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['soundcloud'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Lien vers votre SoundCloud" />
+" type="text" id="stacked-foo" placeholder="URL vers votre SoundCloud" />
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['soundcloud'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -150,7 +152,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">Youtube</label>
             <input name="youtube" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['youtube'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Lien vers votre chaîne Youtube" />
+" type="text" id="stacked-foo" placeholder="URL vers votre chaîne Youtube" />
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['youtube'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -261,10 +263,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </span>
         </div>
 
-        <div class="pure-controls">
-            <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
-        </div>
     </form>
+    <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
+    </div>
 </div>
 <?php
 }

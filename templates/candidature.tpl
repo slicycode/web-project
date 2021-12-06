@@ -46,31 +46,33 @@
         
         <div class="form__input">
             <label for="stacked-foo">Présentation</label>
-            <input name="presentation" value="{$valeurs.presentation|escape|default:''}" type="text" id="stacked-foo" placeholder="Présentation" />
+            <textarea style="resize: vertical;" name="presentation" value="{$valeurs.presentation|escape|default:''}" type="text" id="stacked-foo" placeholder="Présentation" >
+            </textarea>
             <span class="erreur"> {$messages.presentation|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">Expérience</label>
-            <input name="experience" value="{$valeurs.experience|escape|default:''}" type="text" id="stacked-foo" placeholder="Expérience" />
+            <textarea style="resize: vertical;" name="experience" value="{$valeurs.experience|escape|default:''}" type="text" id="stacked-foo" placeholder="Expérience">
+            </textarea>
             <span class="erreur"> {$messages.experience|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">Site ou page Facebook</label>
-            <input name="site" value="{$valeurs.site|escape|default:''}" type="text" id="stacked-foo" placeholder="Site ou page Facebook" />
+            <input name="site" value="{$valeurs.site|escape|default:''}" type="text" id="stacked-foo" placeholder="URL du site ou de la page Facebook" />
             <span class="erreur"> {$messages.site|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">SoundCloud</label>
-            <input name="soundcloud" value="{$valeurs.soundcloud|escape|default:''}" type="text" id="stacked-foo" placeholder="Lien vers votre SoundCloud" />
+            <input name="soundcloud" value="{$valeurs.soundcloud|escape|default:''}" type="text" id="stacked-foo" placeholder="URL vers votre SoundCloud" />
             <span class="erreur"> {$messages.soundcloud|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">Youtube</label>
-            <input name="youtube" value="{$valeurs.youtube|escape|default:''}" type="text" id="stacked-foo" placeholder="Lien vers votre chaîne Youtube" />
+            <input name="youtube" value="{$valeurs.youtube|escape|default:''}" type="text" id="stacked-foo" placeholder="URL vers votre chaîne Youtube" />
             <span class="erreur"> {$messages.youtube|escape|default:''}</span>
         </div>
 
@@ -155,9 +157,9 @@
             <span class="erreur"> {$messages.docsacem|escape|default:''}</span>
         </div>
 
-        <div class="pure-controls">
-            <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
-        </div>
     </form>
+    <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
+    </div>
 </div>
 {/block}
