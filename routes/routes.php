@@ -180,7 +180,7 @@ Flight::route('POST /login', function(){
         $_SESSION["session_on"] = TRUE;
         $_SESSION["informations"] = $conn;
         # On redirige vers la page d'accueil
-        Flight::redirect("index.tpl", array());
+        Flight::redirect("/");
     }
     else{
         # Si l'utilisateur se trompe, alors on redirige l'utilisateur

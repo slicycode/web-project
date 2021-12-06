@@ -108,37 +108,55 @@
         </div>
 
         <div class="form__input">
+            <label for="stacked-foo">*Photo de groupe 1*</label>
+            <input name="photo1" value="{$valeurs.musique3|escape|default:''}" type="file" id="stacked-foo"/>
+            <span class="erreur"> {$messages.musique3|escape|default:''}</span>
+        </div>
+
+        <div class="form__input">
+            <label for="stacked-foo">*Photo de groupe 2*</label>
+            <input name="photo2" value="{$valeurs.musique3|escape|default:''}" type="file" id="stacked-foo"/>
+            <span class="erreur"> {$messages.musique3|escape|default:''}</span>
+        </div>
+
+        <div class="form__input">
             <label for="stacked-foo">*premier fichier audio*</label>
-            <input name="musique1" value="{$valeurs.musique1|escape|default:''}" type="text" id="stacked-foo" placeholder="Première musique" />
+            <input name="musique1" value="{$valeurs.musique1|escape|default:''}" type="file" id="stacked-foo"/>
             <span class="erreur"> {$messages.musique1|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">*second fichier audio*</label>
-            <input name="musique2" value="{$valeurs.musique2|escape|default:''}" type="text" id="stacked-foo" placeholder="Seconde musique" />
+            <input name="musique2" value="{$valeurs.musique2|escape|default:''}" type="file" id="stacked-foo"/>
             <span class="erreur"> {$messages.musique2|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">*troisième fichier audio*</label>
-            <input name="musique3" value="{$valeurs.musique3|escape|default:''}" type="text" id="stacked-foo" placeholder="Troisième musique" />
+            <input name="musique3" value="{$valeurs.musique3|escape|default:''}" type="file" id="stacked-foo"/>
             <span class="erreur"> {$messages.musique3|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">*Le dossier de presse ici*</label>
-            <input name="dossier" value="{$valeurs.dossier|escape|default:''}" type="text" id="stacked-foo" placeholder="Dossier de presse" />
+            <input name="dossier" value="{$valeurs.dossier|escape|default:''}" type="file" id="stacked-foo"/>
+            <span class="erreur"> {$messages.dossier|escape|default:''}</span>
+        </div>
+
+        <div class="form__input">
+            <label for="stacked-foo">*Fiche technique*</label>
+            <input name="ftechnique" value="{$valeurs.dossier|escape|default:''}" type="file" id="stacked-foo"/>
             <span class="erreur"> {$messages.dossier|escape|default:''}</span>
         </div>
 
         <div class="form__input">
             <label for="stacked-foo">*document SACEM PDF*</label>
-            <input name="docsacem" value="{$valeurs.docsacem|escape|default:''}" type="text" id="stacked-foo" placeholder="document SACEM en PDF" />
+            <input name="docsacem" value="{$valeurs.docsacem|escape|default:''}" type="file" id="stacked-foo"/>
             <span class="erreur"> {$messages.docsacem|escape|default:''}</span>
         </div>
 
         <div class="pure-controls">
-            <button type="submit" class="pure-button pure-button-primary">Publier ma candidature</button>
+            <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
         </div>
     </form>
 </div>

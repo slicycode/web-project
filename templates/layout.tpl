@@ -9,12 +9,13 @@
 
 {block name=nav}
 <div class="nav">
-    <a href='./'>Accueil</a>
     {if !isset($session.session_on)}
+    <a href='./'>Accueil</a>
     <a href='register'>S'inscrire</a> 
     <a href='login'>Se connecter</a>
     {else}
     <span>Bienvenue {$session.informations[2]} {$session.informations[1]} </span>
+    <a href='./'>Accueil</a>
     <a href='candidature'>Ma candidature</a>
     <a href='logout'>Me déconnecter</a>
     {/if}
