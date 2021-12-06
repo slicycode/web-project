@@ -21,6 +21,14 @@ Flight::route('/', function(){
     Flight::render("index.tpl", array());
 });
 
+# Permet à l'utilisateur de se déconnecter
+Flight::route('GET /logout', function(){
+    # On vide la variable session pour "fermer la session"
+    $_SESSION = array();
+    # On redirrige vers la racine du site donc l'index
+    Flight::redirect("/");
+});
+
 Flight::route('GET /register', function(){
     Flight::render("register.tpl",array());
 });

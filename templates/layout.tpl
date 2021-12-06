@@ -16,6 +16,7 @@
     {else}
     <p>Bienvenue {$session.informations[2]} {$session.informations[1]} </p>
     <a href='candidature'>Ma candidature</a>
+    <a href='logout'>Me déconnecter</a>
     {/if}
     <a href='admin'>Administrateur</a> 
 </div>
