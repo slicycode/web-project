@@ -13,6 +13,23 @@
     margin: 15px auto;
 }
 
+.nav span {
+    cursor: pointer;
+}
+
+.nav > span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.nav > span:hover::after {
+    width: 100%;
+}
+
 .nav > a {
     text-decoration: none;
 }
