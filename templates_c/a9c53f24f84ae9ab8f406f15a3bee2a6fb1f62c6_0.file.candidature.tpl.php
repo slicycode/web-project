@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-06 15:15:33
+/* Smarty version 3.1.34-dev-7, created on 2021-12-06 15:23:09
   from 'C:\laragon\www\tps\projet\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61ae29154bc2c7_86980951',
+  'unifunc' => 'content_61ae2add8d5a92_05052998',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9c53f24f84ae9ab8f406f15a3bee2a6fb1f62c6' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\candidature.tpl',
-      1 => 1638803731,
+      1 => 1638804187,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61ae29154bc2c7_86980951 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61ae2add8d5a92_05052998 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_76225481761ae29154738e5_69348368', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92201508261ae2add8308d9_03504833', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_194405211161ae29154754b2_72606743', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3765216061ae2add8337d3_63075011', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_76225481761ae29154738e5_69348368 extends Smarty_Internal_Block
+class Block_92201508261ae2add8308d9_03504833 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_76225481761ae29154738e5_69348368',
+    0 => 'Block_92201508261ae2add8308d9_03504833',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Candidature<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_194405211161ae29154754b2_72606743 extends Smarty_Internal_Block
+class Block_3765216061ae2add8337d3_63075011 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_194405211161ae29154754b2_72606743',
+    0 => 'Block_3765216061ae2add8337d3_63075011',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -198,9 +198,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         </div>
 
         <div class="form__input">
+            <label for="stacked-foo">*Photo de groupe 1*</label>
+            <input name="photo1" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="file" id="stacked-foo"/>
+            <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+        </div>
+
+        <div class="form__input">
+            <label for="stacked-foo">*Photo de groupe 2*</label>
+            <input name="photo2" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="file" id="stacked-foo"/>
+            <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+        </div>
+
+        <div class="form__input">
             <label for="stacked-foo">*premier fichier audio*</label>
             <input name="musique1" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['musique1'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Première musique" />
+" type="file" id="stacked-foo"/>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['musique1'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -208,7 +224,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">*second fichier audio*</label>
             <input name="musique2" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['musique2'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Seconde musique" />
+" type="file" id="stacked-foo"/>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['musique2'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -216,7 +232,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">*troisième fichier audio*</label>
             <input name="musique3" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Troisième musique" />
+" type="file" id="stacked-foo"/>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['musique3'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -224,7 +240,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">*Le dossier de presse ici*</label>
             <input name="dossier" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['dossier'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="Dossier de presse" />
+" type="file" id="stacked-foo"/>
+            <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['dossier'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</span>
+        </div>
+
+        <div class="form__input">
+            <label for="stacked-foo">*Fiche technique*</label>
+            <input name="ftechnique" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['dossier'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+" type="file" id="stacked-foo"/>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['dossier'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
@@ -232,13 +256,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="form__input">
             <label for="stacked-foo">*document SACEM PDF*</label>
             <input name="docsacem" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['docsacem'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-" type="text" id="stacked-foo" placeholder="document SACEM en PDF" />
+" type="file" id="stacked-foo"/>
             <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['docsacem'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
         </div>
 
         <div class="pure-controls">
-            <button type="submit" class="pure-button pure-button-primary">Publier ma candidature</button>
+            <button type="submit" class="pure-button pure-button-primary">Envoyer ma candidature</button>
         </div>
     </form>
 </div>

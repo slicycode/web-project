@@ -13,23 +13,6 @@
     margin: 15px auto;
 }
 
-.nav span {
-    cursor: pointer;
-}
-
-.nav > span::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: width .3s;
-}
-
-.nav > span:hover::after {
-    width: 100%;
-}
-
 .nav > a {
     text-decoration: none;
 }
@@ -87,7 +70,7 @@
     text-align: center;
 }
 
-/* STYLE DU FORMULAIRE D'INSCRIPTION ET DE CONNEXION */
+/* STYLE DU FORMULAIRE D'INSCRIPTION, DE CONNEXION ET DE CANDIDATURE */
 
 .form {
     display: flex;
@@ -103,6 +86,8 @@
 .form__input > .radio__btn {
     display: flex;
     justify-content: center;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #fff;
 }
 
 .form__input > .radio__btn > input {
@@ -207,42 +192,4 @@
 
 #form__member > button:hover {
     transform: scale(1.05); 
-}
-
-/* STYLE DE LA PAGE MA CANDIDATURE */
-
-.candidature {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    height: 100%;
-    margin-top: 2em;
-}
-
-.candidature__img > img{
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-}
-
-.candidature__desc {
-    flex-grow: 1;
-    padding-left: 5em;
-}
-
-.candidature__desc > h2 {
-    margin: 0;
-}
-
-@media screen and (max-width: 600px) {
-    .candidature {
-        flex-direction: column;
-        align-items: center;
-    }
-    .candidature__img > img{
-        max-width: 266px;
-    }
-    .candidature__desc {
-        padding: 2em 0;
-    }
 }
