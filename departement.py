@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import numpy as np
 
-url = "https://fr.wikipedia.org/wiki/Liste_des_d%C3%A9partements_fran%C3%A7ais"
+"""url = "https://fr.wikipedia.org/wiki/Liste_des_d%C3%A9partements_fran%C3%A7ais"
 
 reponse = requests.get(url)
 
@@ -31,7 +32,7 @@ print(departement)
 id_departement_sans_corse = []
 
 for i in range(len(id_departement)):
-	if i > 19
+	if i > 19"""
 
 
 """p = p[1:102]
@@ -57,6 +58,19 @@ for dep in departement:
 
 print(nom_departement)"""
 
-df = pd.DataFrame(id_departement, columns=["id_dep"])
+"""df = pd.DataFrame(id_departement, columns=["id_dep"])
 df["nom_dep"] = departement
-df.to_csv("departement.csv", index=False)
+df.to_csv("departement.csv", index=False)"""
+
+df = pd.read_csv("departement.csv")
+print(df)
+
+id_dep = np.array(df["id_dep"])
+
+df.index = df["id_dep"]
+
+print(df)
+
+df = df.drop(["id_dep"], axis=1)
+
+df.to_csv("departement.csv")
