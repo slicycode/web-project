@@ -64,11 +64,77 @@ Flight::route('GET /login', function(){
 });
 
 Flight::route('GET /candidature', function(){
-    Flight::render("candidature.tpl",array());
+    $db = Flight::get('db');
+    $stmt = $db->query("select * from candidature");
+    $peut_candidater = true;
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        if($ligne[1] == $_SESSION["informations"][0]){
+            Flight::render("erreurcandidature.tpl", array());
+            $peut_candidater = false;
+        }
+    }
+    if($peut_candidater)
+        Flight::render("candidature.tpl",array());
 });
 
 Flight::route('GET /liste_candidatures', function(){
-    Flight::render("liste_candidatures.tpl",array());
+    if(isset($_SESSION["session_on"])  && $_SESSION["informations"][8] == 1){
+        $db = Flight::get('db');
+        $stmt = $db->query("select * from candidature");
+        $candidatures = array();
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                array_push($candidatures, $ligne);
+        }
+        $stmt = $db->query("select * from departement");
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                for($i=0; $i<count($candidatures); $i++){
+                    if($candidatures[$i][3] == $ligne[0]){
+                        $candidatures[$i][3] = $ligne[1];
+                    }
+                }
+        }
+        $stmt = $db->query("select * from scene");
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                for($i=0; $i<count($candidatures); $i++){
+                    if($candidatures[$i][4] == $ligne[0]){
+                        $candidatures[$i][4] = $ligne[1];
+                    }
+                }
+        }
+        Flight::render("liste_candidatures.tpl",array("candidatures" => $candidatures));
+    }else{
+        Flight::redirect("/login");
+    }
+    
+});
+
+Flight::route('GET /candidature-@idcand', function($idcand){
+    if(isset($_SESSION["session_on"])  && $_SESSION["informations"][8] == 1){
+        $db = Flight::get('db');
+        $stmt = $db->prepare("select * from candidature where candidature.id_candi = :id");
+        $stmt->execute(array(
+            ":id" => $idcand
+        ));
+        $candidature = array();
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                array_push($candidature, $ligne);
+        }
+        $stmt = $db->query("select * from departement");
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                if($candidature[0][3] == $ligne[0]){
+                    $candidature[0][3] = $ligne[1];
+                }
+        }
+        $stmt = $db->query("select * from scene");
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                if($candidature[0][3] == $ligne[0]){
+                    $candidature[0][3] = $ligne[1];
+                }
+        }
+        Flight::render("detailscandidature.tpl", array("candidature" => $candidature[0]));
+    }else{
+        Flight::redirect("/login");
+    }
 });
 
 Flight::route('POST /candidature', function(){
@@ -203,10 +269,6 @@ Flight::route('POST /candidature', function(){
 
 });
 
-
-Flight::route('GET /admin', function(){
-    Flight::render("admin.tpl",array());
-});
 
 Flight::route('GET /success', function(){
     Flight::render("success.tpl",array("value" => $_POST));

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-10 15:01:45
+/* Smarty version 3.1.34-dev-7, created on 2021-12-16 16:44:05
   from 'C:\laragon\www\ProjetWeb\web-project\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61b36bd989e4d0_24997992',
+  'unifunc' => 'content_61bb6cd57bc7d4_38691515',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f46a41272ae6d432921af64a243e1f98e6b3562f' => 
     array (
       0 => 'C:\\laragon\\www\\ProjetWeb\\web-project\\templates\\candidature.tpl',
-      1 => 1639148502,
+      1 => 1639671119,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61b36bd989e4d0_24997992 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61bb6cd57bc7d4_38691515 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_160470401561b36bd986b015_99526996', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174401890261bb6cd562d943_53269618', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_80865904161b36bd986b8c3_30368059', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_118800277061bb6cd562e421_38039040', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_160470401561b36bd986b015_99526996 extends Smarty_Internal_Block
+class Block_174401890261bb6cd562d943_53269618 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_160470401561b36bd986b015_99526996',
+    0 => 'Block_174401890261bb6cd562d943_53269618',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Candidature<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_80865904161b36bd986b8c3_30368059 extends Smarty_Internal_Block
+class Block_118800277061bb6cd562e421_38039040 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_80865904161b36bd986b8c3_30368059',
+    0 => 'Block_118800277061bb6cd562e421_38039040',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -158,7 +158,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 "/>
                 <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['postal_rep'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
-
             </div>
 
             <div class="form__input">
@@ -167,7 +166,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 "/>
                 <span class="erreur"> <?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['messages']->value['adresse_rep'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
 </span>
-
             </div>
 
             <div class="form__input">
