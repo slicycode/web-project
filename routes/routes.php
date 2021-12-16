@@ -166,10 +166,11 @@ Flight::route('POST /candidature', function(){
             $stmt = Flight::get('db')->query("select * from candidature");
             $id_candidature = $stmt->rowCount();
             $st=Flight::get('db')->prepare(
-            "insert into candidature values(:id, :nom,:dep,:scene,:style,:rep,:annee,:presentation,:experience,:site,:soundcloud,:youtube,:assos,:sacem,:producteur,:musique1,:musique2,:musique3,:dossier,:photo1,:photo2,:fiche,:docsacem)"
+            "insert into candidature values(:id, :id_ut, :nom,:dep,:scene,:style,:rep,:annee,:presentation,:experience,:site,:soundcloud,:youtube,:assos,:sacem,:producteur,:musique1,:musique2,:musique3,:dossier,:photo1,:photo2,:fiche,:docsacem)"
             );
             $st->execute(array(
                 ':id' => $id_candidature,
+                ':id_ut' => $_SESSION["informations"][0],
                 ':nom' => $_POST["nom_groupe"],
                 ':dep' => $_POST["id_dep"],
                 ':scene' => $_POST["id_scene"],
