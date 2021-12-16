@@ -3,7 +3,7 @@ session_start();
 # $_SESSION = array();
 require '../../includes/flight/Flight.php';
 require '../../includes/smarty/libs/Smarty.class.php';
-require('pdo.php');  
+require('pdo.php');
 
 Flight::register('view', 'Smarty', array(), function($smarty){
     $smarty->template_dir = './templates/';
