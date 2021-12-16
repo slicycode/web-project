@@ -65,14 +65,12 @@
                 <label for="stacked-foo">Code postal du représentant</label>
                 <input name="postal_rep" type="text" id="stacked-foo" placeholder="Code postal du représentant" value="{$valeurs.postal_rep|escape|default:''}"/>
                 <span class="erreur"> {$messages.postal_rep|escape|default:''}</span>
-
             </div>
 
             <div class="form__input">
                 <label for="stacked-foo">Adresse du représentant</label>
                 <input name="adresse_rep" type="text" id="stacked-foo" placeholder="Adresse du représentant" value="{$valeurs.adresse_rep|escape|default:''}"/>
                 <span class="erreur"> {$messages.adresse_rep|escape|default:''}</span>
-
             </div>
 
             <div class="form__input">
