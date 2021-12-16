@@ -5,7 +5,7 @@
     <h1>Liste des candidatures</h1>
     <div class="liste">
         <div class="liste__item">
-            <p style="font-weight: bold;">id</p>
+            <p>Numéro</p>
         </div>
 
         <div class="liste__item">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="liste__item">
-            <a href="./candidature-{$candidature[0]}">Détails</a>
+            <a style="font-weight: bold;" href="./candidature-{$candidature[0]}">Détails</a>
         </div>
 
         <div class="liste__item">

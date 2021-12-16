@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-16 15:57:25
+/* Smarty version 3.1.34-dev-7, created on 2021-12-16 21:37:31
   from 'C:\laragon\www\tps\projet\templates\liste_candidatures.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61bb61e513b9a6_81845799',
+  'unifunc' => 'content_61bbb19ba7f416_98732805',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7a2c4ff92a138aa812008a31f67b97de613dc37c' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\liste_candidatures.tpl',
-      1 => 1639670243,
+      1 => 1639690650,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61bb61e513b9a6_81845799 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61bbb19ba7f416_98732805 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136802872361bb61e513aaf2_53139350', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169589698461bbb19ba52f36_43084331', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_89614670861bb61e513b410_24480249', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43413405061bbb19ba56483_18951213', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_136802872361bb61e513aaf2_53139350 extends Smarty_Internal_Block
+class Block_169589698461bbb19ba52f36_43084331 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_136802872361bb61e513aaf2_53139350',
+    0 => 'Block_169589698461bbb19ba52f36_43084331',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Liste des candidatures<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_89614670861bb61e513b410_24480249 extends Smarty_Internal_Block
+class Block_43413405061bbb19ba56483_18951213 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_89614670861bb61e513b410_24480249',
+    0 => 'Block_43413405061bbb19ba56483_18951213',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,11 +64,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <h1>Liste des candidatures</h1>
     <div class="liste">
         <div class="liste__item">
-            <p style="font-weight: bold;">0</p>
+            <p>Numéro</p>
         </div>
 
         <div class="liste__item">
-            <a href="./candidature">Détails</a>
+            <p>Détails</p>
         </div>
 
         <div class="liste__item">
@@ -77,10 +77,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
         <div class="liste__item">
             <p>Département</p>
-        </div>
-
-        <div class="liste__item">
-            <p>Adresse</p>
         </div>
 
         <div class="liste__item">
@@ -95,15 +91,53 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <p>Date de création</p>
         </div>
 
+    </div>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['candidatures']->value, 'candidature');
+$_smarty_tpl->tpl_vars['candidature']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['candidature']->value) {
+$_smarty_tpl->tpl_vars['candidature']->do_else = false;
+?>
+    <div class="liste">
         <div class="liste__item">
-            <p>Présentation</p>
+            <p style="font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['candidature']->value[0];?>
+</p>
         </div>
 
         <div class="liste__item">
-            <p>Expérience</p>
+            <a style="font-weight: bold;" href="./candidature-<?php echo $_smarty_tpl->tpl_vars['candidature']->value[0];?>
+">Détails</a>
+        </div>
+
+        <div class="liste__item">
+            <p><?php echo $_smarty_tpl->tpl_vars['candidature']->value[2];?>
+</p>
+        </div>
+
+        <div class="liste__item">
+            <p><?php echo $_smarty_tpl->tpl_vars['candidature']->value[3];?>
+</p>
+        </div>
+
+        <div class="liste__item">
+            <p><?php echo $_smarty_tpl->tpl_vars['candidature']->value[4];?>
+</p>
+        </div>
+
+        <div class="liste__item">
+            <p><?php echo $_smarty_tpl->tpl_vars['candidature']->value[5];?>
+</p>
+        </div>
+
+        <div class="liste__item">
+            <p><?php echo $_smarty_tpl->tpl_vars['candidature']->value[7];?>
+</p>
         </div>
 
     </div>
+    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php
 }

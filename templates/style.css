@@ -86,7 +86,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 7em auto;
+    margin: 4em auto;
 }
 
 /* STYLE DE LA PAGE D'ACCUEIL */
@@ -243,16 +243,89 @@
     align-items: center;
     justify-content:space-between;
     width: 80%;
-    margin: 2em auto;
+    margin: 1em auto;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-@media screen and (max-width: 1000px) {
-    .liste {
+.liste__item {
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .liste__item {
+        text-align: center;
+    }
+}
+
+/* STYLE DE LA PAGE DES DÉTAILS DES CANDIDATURES */
+
+.ma__candidature {
+    display: flex;
+    width: 100%;
+    margin: 7em 0;
+    justify-content: space-evenly;
+}
+
+
+.hero__img > img {
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+}
+
+.hero__img > h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.hero__img > a {
+    display: block;
+    text-align: center;
+}
+
+.content {
+    width: 50%;
+    padding-top: 7.5em;
+    padding-left: 3em;
+}
+
+.content__item {
+    display: flex;
+}
+
+.content > h3 {
+    font-size: 1em;
+}
+
+.content__item > h3 {
+    font-size: 1em;
+}
+
+.content__item > p {
+    width: 80%;
+    margin-left: 1em;
+}
+
+.content__footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 700px) {
+    .ma__candidature {
         flex-direction: column;
-        width: 100%;
-        margin: 2em auto;
         width: 80%;
+        margin: 4em auto;
+    }
+    .content {
+        padding-top: 2em;
+        padding-left: 0;
+        margin: 0 auto;
+    }
+    .content__item {
+        flex-direction: column;
     }
 }
