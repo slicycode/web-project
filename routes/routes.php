@@ -367,7 +367,7 @@ Flight::route('POST /admin', function(){
         $_SESSION["session_on"] = TRUE;
         $_SESSION["informations"] = $conn;
         # On redirige vers la page d'accueil
-        Flight::redirect("/");
+        Flight::redirect("/listes_candidatures");
     }
     else{
         # Si l'utilisateur se trompe, alors on redirige l'utilisateur

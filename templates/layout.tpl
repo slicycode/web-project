@@ -15,10 +15,11 @@
         <a href='register'>S'inscrire</a> 
         <a href='login'>Se connecter</a>
         {else}
-        <a href='./'>Bienvenue {$session.informations[2]} {$session.informations[1]} </a>
+        <a id="bienvenue" href='./'>Bienvenue {$session.informations[2]} {$session.informations[1]} </a>
         <a href='candidature'>Ma candidature</a>
         <a href='logout'>Me déconnecter</a>
         {/if}
+        <a href='liste_candidatures'>Les candidatures</a> 
         <a href='admin'>Administrateur</a> 
     </div>
     <div class="hamburger">

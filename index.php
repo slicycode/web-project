@@ -1,7 +1,8 @@
 <?php
 session_start();
 # $_SESSION = array();
-require '../../includes/flight/Flight.php';
+// require '../../includes/flight/Flight.php';
+require '../../includes/flight/flight/Flight.php';
 require '../../includes/smarty/libs/Smarty.class.php';
 require('pdo.php');  
 
