@@ -15,12 +15,14 @@
             <a href='register'>S'inscrire</a> 
             <a href='login'>Se connecter</a>
         {else}
-            <a id="bienvenue" href='./'>Bienvenue {$session.informations[2]} {$session.informations[1]} </a>
             {if $session.informations[8] == 0}
+                <a id="bienvenue" href='./'>Bienvenue {$session.informations[2]} {$session.informations[1]} </a>
                 <a href='candidature'>Ma candidature</a>
                 <a href='logout'>Me déconnecter</a>
             {else}
-                <a href='liste_candidatures'>Les candidatures</a> 
+                <a href='./'>Menu admin</a>
+                <a href='liste_candidatures'>Les candidatures</a>
+                <a href='liste_utilisateurs'>Les utilisateurs</a>
                 <a href='logout'>Me déconnecter</a>
             {/if}
         {/if}

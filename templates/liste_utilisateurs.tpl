@@ -2,73 +2,73 @@
 {block name=title}Liste des candidatures{/block}
 {block name=body}
 <div class='app'>
-    <h1>Liste des candidatures</h1>
+    <h1>Liste des utilisateurs</h1>
     <div class="liste">
         <div class="liste__item">
             <p>Numéro</p>
         </div>
 
         <div class="liste__item">
-            <p>Détails</p>
+            <p>Nom</p>
         </div>
 
         <div class="liste__item">
-            <p>Supprimer</p>
+            <p>Prénom</p>
         </div>
 
         <div class="liste__item">
-            <p>Nom du groupe</p>
+            <p>Email</p>
         </div>
 
         <div class="liste__item">
-            <p>Département</p>
+            <p>Adresse</p>
         </div>
 
         <div class="liste__item">
-            <p>Scène</p>
+            <p>Code postal</p>
         </div>
 
         <div class="liste__item">
-            <p>Style de musique</p>
+            <p>Téléphone</p>
         </div>
 
         <div class="liste__item">
-            <p>Date de création</p>
+            <p>Administrateur</p>
         </div>
 
     </div>
-    {foreach from=$candidatures item=candidature}
+    {foreach from=$utilisateurs item=utilisateur}
     <div class="liste">
         <div class="liste__item">
-            <p style="font-weight: bold;">{$candidature[0]}</p>
+            <p>{$utilisateur[0]}</p>
         </div>
 
         <div class="liste__item">
-            <a style="font-weight: bold;" href="./candidature-{$candidature[0]}">Détails</a>
+            <p>{$utilisateur[1]}</p>
         </div>
 
         <div class="liste__item">
-            <a style="font-weight: bold;" href="./supprimercandidature-{$candidature[0]}">Supprimer</a>
+            <p>{$utilisateur[2]}</p>
         </div>
 
         <div class="liste__item">
-            <p>{$candidature[2]}</p>
+            <p>{$utilisateur[3]}</p>
         </div>
 
         <div class="liste__item">
-            <p>{$candidature[3]}</p>
+            <p>{$utilisateur[5]}</p>
         </div>
 
         <div class="liste__item">
-            <p>{$candidature[4]}</p>
+            <p>{$utilisateur[6]}</p>
         </div>
 
         <div class="liste__item">
-            <p>{$candidature[5]}</p>
+            <p>{$utilisateur[7]}</p>
         </div>
 
         <div class="liste__item">
-            <p>{$candidature[7]}</p>
+            <p>{$utilisateur[8]}</p>
         </div>
 
     </div>

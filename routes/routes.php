@@ -33,6 +33,186 @@ function check_connexion($database, $username, $mdp){
     return array();
 }
 
+Flight::route('/stats/nombre-candidatures/', function(){
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+    $data = array(
+        "nombre-candidatures" => $stmt->rowCount()
+    );
+    echo json_encode($data);
+});
+
+Flight::route('/stats/candidatures-par-departement/', function(){
+
+    $data = array();
+
+    $candidatures = array();
+
+    $departements = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        array_push($candidatures, $ligne);
+    }
+
+    $stmt = Flight::get('db')->query("select * from departement");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        array_push($departements, $ligne);
+    }
+
+    foreach ($departements as $departement) {
+
+        $candidatures_dep = array();
+
+        foreach ($candidatures as $candidature) {
+
+            if($departement[0] == $candidature[3]){
+
+                array_push($candidatures_dep, $candidature);
+            }
+        }
+
+        $data[$departement[1]] = $candidatures_dep;
+    }
+
+    echo json_encode($data);
+});
+
+
+Flight::route('/stats/candidatures-par-departement/@num/', function($num){
+
+    $candidatures = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+
+        if($ligne[3] == $num){
+
+            array_push($candidatures, $ligne);
+
+        }
+        
+    }
+
+    $data = array(
+        $num => $candidatures
+    );
+
+    echo json_encode($data);
+});
+
+Flight::route('/stats/candidatures-hauts-de-france/', function(){
+
+    $candidatures = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+
+        if($ligne[3] == 80){
+
+            array_push($candidatures, $ligne);
+
+        }
+        
+    }
+
+    $data = array(
+        80 => $candidatures
+    );
+
+    echo json_encode($data);
+});
+
+Flight::route('/stats/candidatures-hors-hauts-de-france/', function(){
+
+    $candidatures = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+
+        if($ligne[3] != 80){
+
+            array_push($candidatures, $ligne);
+
+        }
+        
+    }
+
+    $data = array(
+        "!80" => $candidatures
+    );
+
+    echo json_encode($data);
+});
+
+Flight::route('/stats/candidatures-par-scene/', function(){
+
+    $data = array();
+
+    $candidatures = array();
+
+    $scenes = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        array_push($candidatures, $ligne);
+    }
+
+    $stmt = Flight::get('db')->query("select * from scene");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+        array_push($scenes, $ligne);
+    }
+
+    foreach ($scenes as $scene) {
+
+        $candidatures_sce = array();
+
+        foreach ($candidatures as $candidature) {
+
+            if($scene[0] == $candidature[4]){
+
+                array_push($candidatures_sce, $candidature);
+            }
+        }
+
+        $data[$scene[1]] = $candidatures_sce;
+    }
+
+    echo json_encode($data);
+});
+
+Flight::route('/stats/candidatures-par-scene/@num/', function($num){
+
+    $candidatures = array();
+
+    $stmt = Flight::get('db')->query("select * from candidature");
+
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+
+        if($ligne[4] == $num){
+
+            array_push($candidatures, $ligne);
+
+        }
+        
+    }
+
+    $data = array(
+        $num => $candidatures
+    );
+
+    echo json_encode($data);
+});
+
+
+
 Flight::route('/', function(){
     Flight::render("index.tpl", array());
 });
@@ -106,6 +286,21 @@ Flight::route('GET /liste_candidatures', function(){
     
 });
 
+Flight::route('GET /liste_utilisateurs', function(){
+    if(isset($_SESSION["session_on"])  && $_SESSION["informations"][8] == 1){
+        $db = Flight::get('db');
+        $stmt = $db->query("select * from utilisateur");
+        $utilisateurs = array();
+        while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+                array_push($utilisateurs, $ligne);
+        }
+        Flight::render("liste_utilisateurs.tpl",array("utilisateurs" => $utilisateurs));
+    }else{
+        Flight::redirect("/login");
+    }
+    
+});
+
 Flight::route('GET /candidature-@idcand', function($idcand){
     if(isset($_SESSION["session_on"])  && $_SESSION["informations"][8] == 1){
         $db = Flight::get('db');
@@ -135,8 +330,26 @@ Flight::route('GET /candidature-@idcand', function($idcand){
     }
 });
 
+Flight::route('GET /supprimercandidature-@idcand', function($idcand){
+    if(isset($_SESSION["session_on"])  && $_SESSION["informations"][8] == 1){
+        $db = Flight::get('db');
+        $stmt = $db->prepare("delete from candidature where candidature.id_candi = :id");
+        $stmt->execute(array(
+            ":id" => $idcand
+        ));
+
+        $stmt = $db->prepare("delete from membre where membre.id_groupe = :id");
+        $stmt->execute(array(
+            ":id" => $idcand
+        ));
+
+        Flight::redirect("/liste_candidatures");
+    }else{
+        Flight::redirect("/login");
+    }
+});
+
 Flight::route('POST /candidature', function(){
-    print_r($_POST);
     $db = Flight::get('db');
     $data = Flight::request()->data;
     $messages=array();
@@ -223,7 +436,7 @@ Flight::route('POST /candidature', function(){
             "insert into candidature values(:id, :id_ut, :nom,:dep,:scene,:style,:rep,:annee,:presentation,:experience,:site,:soundcloud,:youtube,:assos,:sacem,:producteur,:musique1,:musique2,:musique3,:dossier,:photo1,:photo2,:fiche,:docsacem)"
             );
             $st->execute(array(
-                ':id' => $id_candidature,
+                ':id' => 0,
                 ':id_ut' => $_SESSION["informations"][0],
                 ':nom' => $_POST["nom_groupe"],
                 ':dep' => $_POST["id_dep"],
@@ -252,7 +465,7 @@ Flight::route('POST /candidature', function(){
             "insert into representant values(:id, :nom,:prenom,:adresse,:codepostal,:email,:telephone)"
             );
             $st->execute(array(
-                ':id' => $id_candidature,
+                ':id' => 0,
                 ':nom' => $_POST["nom_rep"],
                 ':prenom' => $_POST["prenom_rep"],
                 ':email' => $_POST["email_rep"],
@@ -260,15 +473,13 @@ Flight::route('POST /candidature', function(){
                 ':codepostal' => $_POST["postal_rep"], 
                 ':telephone' => $_POST["tel_rep"],
             ));
-            $stmt = Flight::get('db')->query("select * from membre");
-            $nb_membre_table = $stmt->rowCount();
             for($i=0; $i < $_POST["nb_membre"]; $i++){
                 $id_membre = $i + 1;
                 $st=Flight::get('db')->prepare(
                 "insert into membre values(:id, :nom,:prenom,:instrument,:groupe)"
                 );
                 $st->execute(array(
-                    ':id' => $nb_membre_table + $i,
+                    ':id' => 0,
                     ':nom' => $_POST["nom_mem" . $id_membre],
                     ':prenom' => $_POST["prenom_mem" . $id_membre],
                     ':instrument' => $_POST["instrument_mem" . $id_membre],
@@ -294,13 +505,6 @@ Flight::route('POST /register', function(){
     $db = Flight::get('db');
     $data = Flight::request()->data;
     $messages=array();
-
-    $stmt = $db->prepare("select * from utilisateur");
-    # prepare() pour éviter les injections SQL
-    $stmt->execute();
-    # Si aucun résultat, alors l'email n'existe pas dans la BDD
-    $id = $stmt->rowCount();
-
     $nom = $data->nom;
     $prenom = $data->prenom;
     $password = $data->password;
@@ -376,7 +580,7 @@ Flight::route('POST /register', function(){
             "insert into utilisateur values(:id, :nom,:prenom,:email,:password,:adresse,:codepostal,:telephone,:admin)"
         );
         $st->execute(array(
-            ':id' => $id,
+            ':id' => 0,
             ':nom' => $nom,
             ':prenom' => $prenom,
             ':email' => $email,
