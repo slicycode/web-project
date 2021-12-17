@@ -44,11 +44,11 @@
         </div>
 
         <div class="liste__item">
-            <a style="font-weight: bold;" href="./candidature-{$candidature[0]}">Détails</a>
+            <a style="font-weight: bold; color: #000;" href="./candidature-{$candidature[0]}">Détails</a>
         </div>
 
         <div class="liste__item">
-            <a style="font-weight: bold;" href="./supprimercandidature-{$candidature[0]}">Supprimer</a>
+            <a style="font-weight: bold; color: #000;" href="./supprimercandidature-{$candidature[0]}">Supprimer</a>
         </div>
 
         <div class="liste__item">

@@ -1,8 +1,12 @@
 * {
-    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", sans-serif;
-    color: #fff;
-    background-color: #34343b;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html, body{
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", sans-serif;
+    /* background-color: #34343b; */
 }
 
 /* STYLE DE LA NAVBAR SUR TOUTES LES PAGES */
@@ -20,6 +24,7 @@
 
 .nav-menu > a {
     text-decoration: none;
+    color: #000;
 }
 
 .nav-menu > a::after {
@@ -27,7 +32,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background: #fff;
+    background: #000;
     transition: width .3s;
 }
 
@@ -45,7 +50,7 @@
     height: 2px;
     margin: 2px;
     margin: 5px auto;
-    background-color: #fff;
+    background-color: #000;
 }
 
 @media screen and (max-width: 700px) {
@@ -91,10 +96,20 @@
 
 /* STYLE DE LA PAGE D'ACCUEIL */
 
+.background__img {
+    background-image: url(homepage_img.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 92vh;
+}
+
 .accueil {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 4em;
+    margin-bottom: 8em;
 }
 
 .accueil > h1 {
@@ -129,7 +144,7 @@
     display: flex;
     justify-content: center;
     padding-bottom: .5em;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
 }
 
 .form__input > .radio__btn > input {
@@ -151,11 +166,11 @@
 
 .form__input > input {
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
 }
 
 .form__input > input::placeholder {
-    color: #fff;
+    color: #000;
     opacity: 0.7;
 }
 
@@ -245,7 +260,7 @@
     width: 80%;
     margin: 1em auto;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid black;
 }
 
 .liste__item {
@@ -269,6 +284,7 @@
 
 
 .hero__img > img {
+    max-width: 600px;
     width: 100%;
     height: auto;
     margin-top: 2em;
@@ -281,21 +297,25 @@
 
 .hero__img > a {
     display: block;
+    color: #000;
     text-align: center;
 }
 
 .content {
     width: 50%;
-    padding-top: 7.5em;
+    padding-top: 5em;
     padding-left: 3em;
 }
 
 .content__item {
     display: flex;
+    margin-top: 1em;
 }
 
 .content > h3 {
     font-size: 1em;
+    margin-top: 1em;
+    padding-bottom: .5em;
 }
 
 .content__item > h3 {
@@ -312,6 +332,10 @@
     justify-content: space-evenly;
     width: 100%;
     margin-top: 1em;
+}
+
+.content__footer > a {
+    color: #000;
 }
 
 @media screen and (max-width: 700px) {

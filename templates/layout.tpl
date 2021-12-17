@@ -34,8 +34,9 @@
         <span class="bar"></span>
     </div>
 </div>
-
-<script>
+{/block}
+{block name=body}Accueil{/block}
+    <script async>
     const hamburger = document.querySelector(".hamburger");
     const nav = document.querySelector(".nav-menu");
 
@@ -46,8 +47,5 @@
         nav.classList.toggle("active");
     }
 </script>
-
-{/block}
-{block name=body}Accueil{/block}
 </body>
 </html>
