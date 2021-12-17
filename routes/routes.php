@@ -1,22 +1,20 @@
 <?php
 
-$stmt = Flight::get('db')->query("select * from departement");
-$departements = array();
-while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
-        array_push($departements, array("id_dep" => $ligne[0], "nom_dep" => $ligne[1]));
+function assign_table($nom_table, $nom_var, $nom_champ1, $nom_champ2){
+
+    $stmt = Flight::get('db')->query("select * from $nom_table");
+    $contenu = array();
+    while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
+            array_push($contenu, array($nom_champ1 => $ligne[0], $nom_champ2 => $ligne[1]));
+    }
+    # Permet d'accèder aux départements sur tous les templates
+    Flight::view()->assign($nom_var, $contenu);
+
 }
 
-Flight::view()->assign("departements", $departements);
+assign_table("departement", "departements", "id_dep", "nom_dep");
 
-
-$stmt = Flight::get('db')->query("select * from scene");
-$scenes = array();
-while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
-        array_push($scenes, array("id_scene" => $ligne[0], "nom_scene" => $ligne[1]));
-}
-
-Flight::view()->assign("scenes", $scenes);
-
+assign_table("scene", "scenes", "id_scene", "nom_scene");
 
 if(isset($_SESSION["session_on"])){
     Flight::view()->assign("session", $_SESSION);
@@ -26,7 +24,7 @@ if(isset($_SESSION["session_on"])){
 function check_connexion($database, $username, $mdp){
     $stmt = $database->query("select * from utilisateur");
     while ($ligne = $stmt->fetch(PDO::FETCH_NUM)) { # On parcourt tout la table utilisateur
-        # Si le nom d'utilisateur et le mdp sont corrects
+        # Si le nom d'utilisateur et le mdp sont correctes
         if($username == $ligne[3] && password_verify($mdp, $ligne[4]))
             # Retourne les infos de l'utilisateur
             return $ligne;
@@ -262,6 +260,23 @@ Flight::route('POST /candidature', function(){
                 ':codepostal' => $_POST["postal_rep"], 
                 ':telephone' => $_POST["tel_rep"],
             ));
+            $stmt = Flight::get('db')->query("select * from membre");
+            $nb_membre_table = $stmt->rowCount();
+            for($i=0; $i < $_POST["nb_membre"]; $i++){
+                $id_membre = $i + 1;
+                $st=Flight::get('db')->prepare(
+                "insert into membre values(:id, :nom,:prenom,:instrument,:groupe)"
+                );
+                $st->execute(array(
+                    ':id' => $nb_membre_table + $i,
+                    ':nom' => $_POST["nom_mem" . $id_membre],
+                    ':prenom' => $_POST["prenom_mem" . $id_membre],
+                    ':instrument' => $_POST["instrument_mem" . $id_membre],
+                    ':groupe' => $id_candidature,
+                ));
+            }
+            
+
             Flight::redirect("/");
         }
     }

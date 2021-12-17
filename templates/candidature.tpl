@@ -81,6 +81,38 @@
             </div>
 
             <div class="form__input">
+                <label for="stacked-name">Nombre de membre(s)</label>
+                <select name="nb_membre", id="nb_membre">
+                    {for $i=1 to 8}
+                        <option>{$i}</option> 
+                    {/for}
+                </select>
+
+            </div>
+
+            {for $i=1 to 8}
+
+            <div class="form__input">
+                <label for="stacked-foo">Nom du membre {$i}</label>
+                <input name="nom_mem{$i}" type="text" id="stacked-foo" placeholder="Nom du membre {$i}" value="{$valeurs.nom_mem|escape|default:''}"/>
+
+            </div>
+
+            <div class="form__input">
+                <label for="stacked-foo">Prénom du membre {$i}</label>
+                <input name="prenom_mem{$i}" type="text" id="stacked-foo" placeholder="Prénom du membre {$i}" value="{$valeurs.prenom_mem|escape|default:''}"/>
+
+            </div>
+
+            <div class="form__input">
+                <label for="stacked-foo">Instrument du membre {$i}</label>
+                <input name="instrument_mem{$i}" type="text" id="stacked-foo" placeholder="Instrument du membre {$i}" value="{$valeurs.instrument_mem|escape|default:''}"/>
+
+            </div>
+
+            {/for}
+
+            <div class="form__input">
                 <label for="stacked-foo">Année de création</label>
                 <input name="annee" value="{$valeurs.annee|escape|default:''}" type="text" id="stacked-foo" placeholder="Année de création" />
                 <span class="erreur"> {$messages.annee|escape|default:''}</span>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-16 16:44:05
+/* Smarty version 3.1.34-dev-7, created on 2021-12-17 12:48:57
   from 'C:\laragon\www\ProjetWeb\web-project\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61bb6cd57bc7d4_38691515',
+  'unifunc' => 'content_61bc87395f10e9_61345127',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f46a41272ae6d432921af64a243e1f98e6b3562f' => 
     array (
       0 => 'C:\\laragon\\www\\ProjetWeb\\web-project\\templates\\candidature.tpl',
-      1 => 1639671119,
+      1 => 1639745296,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61bb6cd57bc7d4_38691515 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61bc87395f10e9_61345127 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174401890261bb6cd562d943_53269618', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104111575261bc87395c5b21_55317702', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_118800277061bb6cd562e421_38039040', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_166920346761bc87395c63c8_18592851', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_174401890261bb6cd562d943_53269618 extends Smarty_Internal_Block
+class Block_104111575261bc87395c5b21_55317702 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_174401890261bb6cd562d943_53269618',
+    0 => 'Block_104111575261bc87395c5b21_55317702',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Candidature<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_118800277061bb6cd562e421_38039040 extends Smarty_Internal_Block
+class Block_166920346761bc87395c63c8_18592851 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_118800277061bb6cd562e421_38039040',
+    0 => 'Block_166920346761bc87395c63c8_18592851',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -176,6 +176,63 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </span>
 
             </div>
+
+            <div class="form__input">
+                <label for="stacked-name">Nombre de membre(s)</label>
+                <select name="nb_membre", id="nb_membre">
+                    <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 8+1 - (1) : 1-(8)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                        <option><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</option> 
+                    <?php }
+}
+?>
+                </select>
+
+            </div>
+
+            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 8+1 - (1) : 1-(8)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+
+            <div class="form__input">
+                <label for="stacked-foo">Nom du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</label>
+                <input name="nom_mem<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" type="text" id="stacked-foo" placeholder="Nom du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['nom_mem'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+"/>
+
+            </div>
+
+            <div class="form__input">
+                <label for="stacked-foo">Prénom du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</label>
+                <input name="prenom_mem<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" type="text" id="stacked-foo" placeholder="Prénom du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['prenom_mem'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+"/>
+
+            </div>
+
+            <div class="form__input">
+                <label for="stacked-foo">Instrument du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</label>
+                <input name="instrument_mem<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" type="text" id="stacked-foo" placeholder="Instrument du membre <?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+" value="<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['valeurs']->value['instrument_mem'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+"/>
+
+            </div>
+
+            <?php }
+}
+?>
 
             <div class="form__input">
                 <label for="stacked-foo">Année de création</label>
