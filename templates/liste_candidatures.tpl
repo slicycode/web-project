@@ -3,7 +3,7 @@
 {block name=body}
 <div class='app'>
     <h1>Liste des candidatures</h1>
-    <div class="liste">
+    <div class="liste__categories">
         <div class="liste__item">
             <p>Numéro</p>
         </div>

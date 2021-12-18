@@ -9,6 +9,11 @@ html, body{
     /* background-color: #34343b; */
 }
 
+@font-face {
+    font-family: 'Lato';
+    src: url("./fonts/Lato-Bold.ttf") format('truetype');
+}
+
 /* STYLE DE LA NAVBAR SUR TOUTES LES PAGES */
 
 .nav-menu {
@@ -25,6 +30,7 @@ html, body{
 .nav-menu > a {
     text-decoration: none;
     color: #000;
+    font-family: 'Lato';
 }
 
 .nav-menu > a::after {
@@ -253,7 +259,7 @@ html, body{
 
 /* STYLE DE LA LISTE DES CANDIDATURES */
 
-.liste {
+.liste, .liste__categories {
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -261,6 +267,14 @@ html, body{
     margin: 1em auto;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
+}
+
+.app > h1 {
+    margin-bottom: 1em;
+}
+
+.liste__categories {
+    font-weight: 900;
 }
 
 .liste__item {
